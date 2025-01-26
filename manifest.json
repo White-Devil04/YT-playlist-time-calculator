@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "YT Playlist Time Calculator",
+  "version": "1.0.0",
+  "description": "Calculate the total time of a YouTube playlist",
+  "permissions": ["tabs", "storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/calculate.png"
+        ],
+        "matches": ["https://*.youtube.com/*"]
+      }
+    ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/playlist*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "YT Playlist Time Calculator",
+    "default_icon": {
+      "16": "assets/icon.png",
+      "48": "assets/icon.png",
+      "128": "assets/icon.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  }
+}
