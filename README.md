@@ -4,7 +4,7 @@ A browser extension that instantly calculates the total duration of any YouTube 
 
 ## 🎥 Demo
 
-https://github.com/White-Devil04/YT-Playlist-Time-Counter/assets/video/YT-Playlist-time-calculator.mkv
+https://github.com/White-Devil04/YT-Playlist-Time-Counter/assets/video/YT-Playlist-time-calculator.mp4
 
 ## ✨ Features
 
