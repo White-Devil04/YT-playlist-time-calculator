@@ -26,7 +26,9 @@
         "display: inline-flex; justify-content: center; align-items: center; width: 24px; height: 24px; padding: 6px; background-color:rgb(105, 105, 105, 0.5); border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); cursor: pointer;";
 
       playlist_header = document.getElementsByClassName(
-        "yt-flexible-actions-view-model-wiz__action-row",
+        "yt-flexible-actions-view-model-wiz__action-row"
+      )[0] || document.getElementsByClassName(
+        "metadata-buttons-wrapper"
       )[0];
 
       if (playlist_header) {
@@ -44,7 +46,7 @@
     const videoElements = document.querySelectorAll(
       // "#contents .ytd-playlist-video-renderer",  -- this selection give 3 time duplicate data
       "ytd-playlist-video-list-renderer ytd-playlist-video-renderer",
-    );
+    ) || document.querySelectorAll("ytd-item-section-renderer style-scope ytd-item-section-renderer");
 
     if (!videoElements.length) {
       console.log("No videos found");
@@ -82,6 +84,7 @@
 
     totalDuration = formatDuration(totalSeconds);
 
+
     displayPlaylistDuration();
   };
 
@@ -96,7 +99,7 @@
   const displayPlaylistDuration = () => {
     const playlistDisplayArea = document.getElementsByClassName(
       "page-header-view-model-wiz__page-header-flexible-actions yt-flexible-actions-view-model-wiz",
-    )[1];
+    )[1] || document.getElementsByClassName("immersive-header-content style-scope ytd-playlist-header-renderer")[0];
 
     if (!playlistDisplayArea) {
       console.log("No playlist display area found");
